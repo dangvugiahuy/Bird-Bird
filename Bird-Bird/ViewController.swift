@@ -85,7 +85,14 @@ class ViewController: UIViewController {
         medalBoard.translatesAutoresizingMaskIntoConstraints = false
         return medalBoard
     }()
-    
+    private let medal: UIImageView = {
+        let medal: UIImageView = UIImageView()
+        medal.image = UIImage(named: "BronzeMedal.png")
+        medal.contentMode = .scaleAspectFill
+        medal.isHidden = true
+        medal.translatesAutoresizingMaskIntoConstraints = false
+        return medal
+    }()
     private let okButton: UIButton = {
         let okButton: UIButton = UIButton()
         okButton.setBackgroundImage(UIImage(named: "okButton.png"), for: .normal)
@@ -140,6 +147,7 @@ class ViewController: UIViewController {
         view.addSubview(platform)
         view.addSubview(medalBoard)
         view.addSubview(okButton)
+        view.addSubview(medal)
         view.addSubview(number1StBestScore)
         view.addSubview(number2NdBestScore)
         view.addSubview(number3RdBestScore)
@@ -213,6 +221,12 @@ class ViewController: UIViewController {
         conStraints.append(okButton.centerXAnchor.constraint(equalTo: view.centerXAnchor))
         conStraints.append(okButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3))
         conStraints.append(okButton.heightAnchor.constraint(equalTo: okButton.widthAnchor, multiplier: 1/3))
+        
+        //Hiển thị huy chương
+        conStraints.append(medal.topAnchor.constraint(equalTo: medalBoard.topAnchor, constant: 55))
+        conStraints.append(medal.leadingAnchor.constraint(equalTo: medalBoard.leadingAnchor, constant: 35))
+        conStraints.append(medal.widthAnchor.constraint(equalTo: medalBoard.widthAnchor, multiplier: 1/5))
+        conStraints.append(medal.heightAnchor.constraint(equalTo: medal.widthAnchor, multiplier: 1))
 
         //[ACTIVE CÁC CONSTRAINT]
         NSLayoutConstraint.activate(conStraints)
@@ -274,6 +288,26 @@ class ViewController: UIViewController {
                     number2NdBestScore.image = UIImage(named: "small\(arrayOfNumBestScore[1]).png")
                     number1StBestScore.frame.origin.x = number2NdBestScore.frame.origin.x - 25.0
                 }
+                if storedScore >= 20 && storedScore <= 59
+                {
+                    if medal.isHidden == true
+                    {
+                        medal.isHidden = false
+                        medal.image = UIImage(named: "BronzeMedal.png")
+                    } else {
+                        medal.image = UIImage(named: "BronzeMedal.png")
+                    }
+                }
+                else if storedScore >= 60 && storedScore <= 99
+                {
+                    if medal.isHidden == true
+                    {
+                        medal.isHidden = false
+                        medal.image = UIImage(named: "SilverMedal.png")
+                    } else {
+                        medal.image = UIImage(named: "SilverMedal.png")
+                    }
+                }
             }
             else if storedScore >= 100 && storedScore <= 999
             {
@@ -287,6 +321,13 @@ class ViewController: UIViewController {
                     number3RdBestScore.image = UIImage(named: "small\(arrayOfNumBestScore[2]).png")
                     number1StBestScore.frame.origin.x -= 50.0
                     number2NdBestScore.frame.origin.x -= 25.0
+                }
+                if medal.isHidden == true
+                {
+                    medal.isHidden = false
+                    medal.image = UIImage(named: "GoldMedal.png")
+                } else {
+                    medal.image = UIImage(named: "GoldMedal.png")
                 }
             }
             BestScoresBefore = storedScore
@@ -306,6 +347,9 @@ class ViewController: UIViewController {
         
         if number3RdBestScore.isHidden == false
         {number3RdBestScore.isHidden = true}
+        
+        if medal.isHidden == false
+        {medal.isHidden = true}
         
         if okButton.isHidden == false && okButton.isEnabled == true
         {

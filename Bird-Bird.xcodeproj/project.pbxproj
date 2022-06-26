@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F515123828688F98001BC976 /* GoldMedal.png in Resources */ = {isa = PBXBuildFile; fileRef = F515123528688F98001BC976 /* GoldMedal.png */; };
+		F515123928688F98001BC976 /* BronzeMedal.png in Resources */ = {isa = PBXBuildFile; fileRef = F515123628688F98001BC976 /* BronzeMedal.png */; };
+		F515123A28688F98001BC976 /* SilverMedal.png in Resources */ = {isa = PBXBuildFile; fileRef = F515123728688F98001BC976 /* SilverMedal.png */; };
 		F52B96342862B1D8003611BE /* soundOFF.png in Resources */ = {isa = PBXBuildFile; fileRef = F52B960F2862B1D8003611BE /* soundOFF.png */; };
 		F52B96352862B1D8003611BE /* small4.png in Resources */ = {isa = PBXBuildFile; fileRef = F52B96102862B1D8003611BE /* small4.png */; };
 		F52B96362862B1D8003611BE /* small5.png in Resources */ = {isa = PBXBuildFile; fileRef = F52B96112862B1D8003611BE /* small5.png */; };
@@ -55,6 +58,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F515123528688F98001BC976 /* GoldMedal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoldMedal.png; sourceTree = "<group>"; };
+		F515123628688F98001BC976 /* BronzeMedal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BronzeMedal.png; sourceTree = "<group>"; };
+		F515123728688F98001BC976 /* SilverMedal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SilverMedal.png; sourceTree = "<group>"; };
 		F52B960F2862B1D8003611BE /* soundOFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundOFF.png; sourceTree = "<group>"; };
 		F52B96102862B1D8003611BE /* small4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small4.png; sourceTree = "<group>"; };
 		F52B96112862B1D8003611BE /* small5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small5.png; sourceTree = "<group>"; };
@@ -122,6 +128,9 @@
 				F52B96102862B1D8003611BE /* small4.png */,
 				F52B96112862B1D8003611BE /* small5.png */,
 				F52B96122862B1D8003611BE /* small7.png */,
+				F515123628688F98001BC976 /* BronzeMedal.png */,
+				F515123528688F98001BC976 /* GoldMedal.png */,
+				F515123728688F98001BC976 /* SilverMedal.png */,
 				F52B9659286477DB003611BE /* Bird.png */,
 				F52B96132862B1D8003611BE /* pipeBelow.png */,
 				F52B96142862B1D8003611BE /* small6.png */,
@@ -261,6 +270,8 @@
 				F52B96402862B1D8003611BE /* logoFlappyBird.png in Resources */,
 				F54BF27A28007B2B002E3E7E /* Main.storyboard in Resources */,
 				F52B96542862B1D8003611BE /* 1.png in Resources */,
+				F515123A28688F98001BC976 /* SilverMedal.png in Resources */,
+				F515123928688F98001BC976 /* BronzeMedal.png in Resources */,
 				F52B964B2862B1D8003611BE /* 5.png in Resources */,
 				F52B965A286477DB003611BE /* Bird.png in Resources */,
 				F52B964A2862B1D8003611BE /* chartButton.png in Resources */,
@@ -282,6 +293,7 @@
 				F52B96422862B1D8003611BE /* bottomPipe.png in Resources */,
 				F52B96452862B1D8003611BE /* platform.png in Resources */,
 				F52B96462862B1D8003611BE /* BackGround.png in Resources */,
+				F515123828688F98001BC976 /* GoldMedal.png in Resources */,
 				F52B96352862B1D8003611BE /* small4.png in Resources */,
 				F52B96512862B1D8003611BE /* okButton.png in Resources */,
 				F52B96482862B1D8003611BE /* soundON.png in Resources */,
