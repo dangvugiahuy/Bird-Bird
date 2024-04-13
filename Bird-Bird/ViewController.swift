@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var MuteSound: Bool  = false              //Tạo biến chứa trạng thái Mute và Unmute của nhạc game
+    var MuteSound: Bool  = false
     var BestScoresBefore: Int = Int()
     
     //LẤY HEIGHT AND WIDTH CỦA THIẾT BỊ
@@ -103,7 +103,6 @@ class ViewController: UIViewController {
         return okButton
     }()
     
-    //---------------------------------------------3 CHỮ SỐ CỦA BEST SCORE------------------------------------------
     private let number1StBestScore: UIImageView = {
         let number1StBestScore: UIImageView = UIImageView()
         number1StBestScore.image = UIImage(named: "small0.png")
@@ -152,77 +151,72 @@ class ViewController: UIViewController {
         view.addSubview(number2NdBestScore)
         view.addSubview(number3RdBestScore)
         
-        
-        
-        
-        //Gọi hàm thực hiện autoLayOut
         addConstraints()
     }
     
-    private func addConstraints ()          //Hàm chứa tất cả các đối tượng được autoLayOut
+    private func addConstraints ()
     {
         //[TẠO MẢNG CHỨA CÁC CONSTRAINTS]
         var conStraints = [NSLayoutConstraint]()
         
-        
         //[APPEND CÁC CONSTRAINTS CỦA CÁC ĐỐI TƯỢNG VẢO MẢNG]
         
-        //hình nền của trò chơi
+        
         conStraints.append(backGroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor))
         conStraints.append(backGroundView.centerYAnchor.constraint(equalTo: view.centerYAnchor))
         conStraints.append(backGroundView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1))
         conStraints.append(backGroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1))
         
-        //nút play
+        
         conStraints.append(playButton.centerXAnchor.constraint(equalTo: backGroundView.centerXAnchor))
         conStraints.append(playButton.bottomAnchor.constraint(equalTo: backGroundView.bottomAnchor, constant: -120))
         conStraints.append(playButton.widthAnchor.constraint(equalTo: backGroundView.widthAnchor, multiplier: 1/2))
         conStraints.append(playButton.heightAnchor.constraint(equalTo: playButton.widthAnchor, multiplier: 1/2))
         
-        //LogoFlappyBird
+        
         conStraints.append(imgLogoFlappy.centerXAnchor.constraint(equalTo: backGroundView.centerXAnchor))
         conStraints.append(imgLogoFlappy.centerYAnchor.constraint(equalTo: bird.centerYAnchor, constant: -130))
         conStraints.append(imgLogoFlappy.widthAnchor.constraint(equalTo: backGroundView.widthAnchor, multiplier: 3/4))
         conStraints.append(imgLogoFlappy.heightAnchor.constraint(equalTo: imgLogoFlappy.widthAnchor, multiplier: 1/3))
         
-        //Bird
+        
         conStraints.append(bird.centerXAnchor.constraint(equalTo: backGroundView.centerXAnchor))
         conStraints.append(bird.centerYAnchor.constraint(equalTo: backGroundView.centerYAnchor))
         conStraints.append(bird.widthAnchor.constraint(equalTo: backGroundView.widthAnchor, multiplier: 1/5))
         conStraints.append(bird.heightAnchor.constraint(equalTo: bird.widthAnchor, multiplier: 1/2))
         
-        //Nền đất bên dưới
+        
         conStraints.append(platform.centerXAnchor.constraint(equalTo: backGroundView.centerXAnchor))
         conStraints.append(platform.widthAnchor.constraint(equalTo: backGroundView.widthAnchor, multiplier: 1))
         conStraints.append(platform.topAnchor.constraint(equalTo: playButton.bottomAnchor))
         conStraints.append(platform.heightAnchor.constraint(equalTo: platform.widthAnchor, multiplier: 1/2))
         
-        //Nút bật tắt âm thanh
+        
         conStraints.append(soundButton.bottomAnchor.constraint(equalTo: imgLogoFlappy.topAnchor, constant: -30))
         conStraints.append(soundButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30))
         conStraints.append(soundButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/7))
         conStraints.append(soundButton.heightAnchor.constraint(equalTo: soundButton.widthAnchor, multiplier: 1))
         
-        //Nút hiện best score và medal
+        
         conStraints.append(chartButton.bottomAnchor.constraint(equalTo: imgLogoFlappy.topAnchor, constant: -30))
         conStraints.append(chartButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30))
         conStraints.append(chartButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/4))
         conStraints.append(chartButton.heightAnchor.constraint(equalTo: chartButton.widthAnchor, multiplier: 1/2))
         
         
-        //Bảng hiện best score và medal
+        
         conStraints.append(medalBoard.centerXAnchor.constraint(equalTo: view.centerXAnchor))
         conStraints.append(medalBoard.centerYAnchor.constraint(equalTo: view.centerYAnchor))
         conStraints.append(medalBoard.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 3/4))
         conStraints.append(medalBoard.heightAnchor.constraint(equalTo: medalBoard.widthAnchor, multiplier: 1/2))
         
-        //Nút OK tắt bảng best score
+        
         conStraints.append(okButton.topAnchor.constraint(equalTo: medalBoard.bottomAnchor, constant: self.Width/20))
         conStraints.append(okButton.centerXAnchor.constraint(equalTo: view.centerXAnchor))
         conStraints.append(okButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3))
         conStraints.append(okButton.heightAnchor.constraint(equalTo: okButton.widthAnchor, multiplier: 1/3))
         
-        //Hiển thị huy chương
+        
         conStraints.append(medal.topAnchor.constraint(equalTo: medalBoard.topAnchor, constant: 55))
         conStraints.append(medal.leadingAnchor.constraint(equalTo: medalBoard.leadingAnchor, constant: 35))
         conStraints.append(medal.widthAnchor.constraint(equalTo: medalBoard.widthAnchor, multiplier: 1/5))
@@ -234,7 +228,6 @@ class ViewController: UIViewController {
     
     //CÁC HÀM SỰ KIỆN CỦA CÁC BUTTON
     
-    //Nút play
     @objc func goToPlayScreen()
     {
         let vc = storyboard?.instantiateViewController(withIdentifier: "playScreen") as! PlayScreenViewController
@@ -242,7 +235,6 @@ class ViewController: UIViewController {
         vc.BestScoreAfter = BestScoresBefore
     }
     
-    //Nút tắt bật nhạc game
     @objc func muteOrUnmuteSound()
     {
         if MuteSound == false {
@@ -255,7 +247,6 @@ class ViewController: UIViewController {
         }
     }
     
-    //Nút hiện best score và huy chương
     @objc func showChartBoard()
     {
         if medalBoard.isHidden == true

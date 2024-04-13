@@ -17,10 +17,7 @@ struct SaveScore {
         if bestScore == 0
         {
             bestScore = score
-        } else if bestScore != 0 && bestScore > score
-        {
-            bestScore += 0                 //Best score bằng chính nó
-        } else if score > bestScore
+        } else if bestScore != 0 && score > bestScore
         {
             bestScore = score
         }
