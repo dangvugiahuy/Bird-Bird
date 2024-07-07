@@ -16,7 +16,7 @@ This application is based on game Flappy Bird
 
 ## Tech Stack
 
-**Client:** SwiftUI
+**Client:** UIKit
 
 **Save data:** NSUserDefaults
 
@@ -24,5 +24,5 @@ This application is based on game Flappy Bird
 ## Demo
 
 <p align="center">
-  <img width="250" src="https://github.com/chumeodiHERE/chumeodiHERE/blob/main/gif/demo_airbnb.gif">
+  <img width="250" src="https://github.com/dangvugiahuy/chumeodiHERE/blob/main/gif/bird-bird.gif">
 </p>
